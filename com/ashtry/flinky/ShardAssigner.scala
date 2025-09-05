@@ -2,7 +2,6 @@ package com.ashtry.flinky.core.kinesis
 
 import org.apache.flink.streaming.connectors.kinesis.KinesisShardAssigner
 import org.apache.flink.streaming.connectors.kinesis.model.StreamShardHandle
-import tv.tubi.flinky.core.utils.Datadog
 
 /**
  * customized assigner, which will loop the shard ids, and give it to a sub task from 0 to max,
