@@ -26,8 +26,6 @@ class ShardAssigner(shardIds:Seq[String]) extends KinesisShardAssigner {
 
     val subIndex = resultMap.getOrElse(shard.getShard.getShardId, Math.abs(shard.getShard.getShardId.hashCode) % numParallelSubtasks)
 
-    Datadog.distribution(s"flink.subtask.number", 1, Seq(s"subtask:subtask_${subIndex}"): _*)
-
     subIndex
   }
 }
